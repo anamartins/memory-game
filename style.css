@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding:0;
+
+}
+
+h1 {
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Special Elite', Helvetica, sans-serif;
+    font-size: 5rem;
+
+}
+
+
+
+.grid {
+    display: grid;
+}
+
+.place {
+    width: 20%;
+}
