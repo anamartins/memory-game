@@ -12,12 +12,83 @@ h1 {
 
 }
 
-
-
-.grid {
-    display: grid;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.place {
-    width: 20%;
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 87%;
+    justify-content: space-between;
+
 }
+
+.card {
+    width: 10%;
+    perspective: 1000px;
+    background-color: transparent;
+    box-sizing: border-box;
+
+}
+
+
+.spin {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+
+}
+
+.spin-click {
+    transform: rotateY(180deg);
+
+}
+
+.card-front, .card-back {
+    
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: #FFF;  
+    transform: rotateY(180deg);
+    position: relative;
+    
+}
+
+.card-back {
+    top:0;
+    left:0;
+    position: absolute;
+
+}
+
+.card-back img  {
+    background-color: #FFDB58;
+}
+
+
+.card-front img,
+.card-back img  {
+    border: 0.3rem solid #000;
+    border-radius: 5px;
+    padding: 0.5%;
+    
+}
+
+
+
+
+
+
+
+
+
