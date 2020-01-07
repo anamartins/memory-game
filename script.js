@@ -29,6 +29,8 @@ function createContainer() {
         card.dataset.id = 'empty';
 
         placeCards(i);
+        setTimeout(showAllCards,1000);
+        setTimeout(flipAllCards,4000);
     }
 
     
@@ -87,9 +89,10 @@ function onCardClick() {
             console.log(tries);
 
             if (tries === 0) {
-                let card = document.querySelectorAll('.card');
-                card[9].style.transform = 'translateX(-800px)';
-                card[9].style.transitionDuration = '2s';
+                
+                setTimeout(flipAllCards, 1500);
+
+                setTimeout(collectCards, 2500);
                 
                 console.log('game over!');
             }
@@ -103,13 +106,43 @@ function onCardClick() {
     }
 
 
-    function flipCards() {
-        for (let i=0; i<pair.length; i++){
-            let div = pair[i].childNodes[0];
-            div.classList.remove('spin-click');
-        }
-        pair=[];
+}
+
+
+
+
+function flipCards() {
+    for (let i=0; i<pair.length; i++){
+        let div = pair[i].childNodes[0];
+        div.classList.remove('spin-click');
+    }
+    pair=[];
+}
+
+function flipAllCards() {
+    let div = document.querySelectorAll('.spin-click');
+    console.log(div);
+
+    for (let i=0; i<div.length; i++) {
+        div[i].classList.remove('spin-click');
     }
 
 }
 
+function showAllCards() {
+    let div = document.querySelectorAll('.spin');
+    for (let i=0; i<div.length; i++) {
+        div[i].classList.add('spin-click');
+    }
+    
+}
+
+function collectCards() {
+    for (let i=0; i<numberCards*2; i++) {
+        let card = document.querySelectorAll('.card');
+        card[i].style.transform = `translateX(-${i*111}px)`;
+        card[i].style.transitionDuration = '1s';
+    }
+    
+
+}

@@ -1,12 +1,25 @@
 {
   "name": "memory-game",
   "version": "1.0.0",
-  "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anamartins/memory-game.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anamartins/memory-game/issues"
+  },
+  "homepage": "https://github.com/anamartins/memory-game#readme",
+  "dependencies": {
+    "parcel": "^1.12.4"
+  },
+  "devDependencies": {},
+  "description": ""
 }
