@@ -176,7 +176,7 @@ function playAgain() {
     tries = 3;
     pair = [];
 
-    setTimeout(function(){div.style.visibility = 'hidden';},500);
+    setTimeout(function(){div.style.visibility = 'hidden';},200);
 
     setTimeout(putCardsOnPlace, 2000);
 
