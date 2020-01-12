@@ -20,6 +20,8 @@
   "dependencies": {
     "parcel": "^1.12.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sass": "^1.24.4"
+  },
   "description": ""
 }
