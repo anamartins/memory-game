@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding:0;
-
 }
 
 
@@ -21,7 +20,7 @@ body {
 }
 
 .card {
-    width: 10%;
+    width: 20%;
     perspective: 1000px;
     background-color: transparent;
     box-sizing: border-box;
@@ -147,6 +146,31 @@ body {
     margin: 0;
     padding: 0;
 }
+
+
+
+@media (min-width: 550px) { 
+    .container {
+        width: 80%;
+    }
+
+    .card {
+        width: 18%;
+    }
+
+}
+
+@media (min-width: 850px) { 
+    .container {
+        width: 50%;
+    }
+
+    .card {
+        width: 17%;
+    }
+}
+
+
 
 
 

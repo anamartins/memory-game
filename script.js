@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", onDOMReady);
 
-let numberCards = 2;
+let numberCards = 10;
 let level;
 let control = [];
 let pair = [];
