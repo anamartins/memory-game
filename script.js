@@ -1,12 +1,17 @@
 document.addEventListener("DOMContentLoaded", onDOMReady);
 
+// could be a number between 5 and 15; the numbers of cards will be the double of this number
 let numberCards = 10;
-let level;
+// this array will measure how many times each card is being used; the limit is 2
 let control = [];
+// this array will check whether the pair matches or not
 let pair = [];
 let maxTries = 3;
 let tries = 3;
+// get the position of the cards
+// when we collect the cards and distribute them again we need to know where to put those cards
 let position = [];
+// how many pairs the player did correctly
 let flippedCards = 0;
 
 function onDOMReady() {
@@ -19,6 +24,7 @@ function setHearts() {
   let hearts = document.querySelector(".hearts");
 
   for (let i = 0; i < maxTries; i++) {
+    // we have two different types of heart and here we will randomly choose them
     let random = Math.floor(Math.random() * 2);
 
     let div = document.createElement("div");
@@ -57,8 +63,10 @@ function createContainer() {
 
 function placeCards(num) {
   let card = document.querySelectorAll(".card");
+  // here we raffle the card position
   let raffle = Math.floor(Math.random() * numberCards);
 
+  // if the card has already been used 2 times, we need to raffle again
   while (control[raffle] === 2) {
     raffle = Math.floor(Math.random() * numberCards);
   }
@@ -83,12 +91,14 @@ function placeCards(num) {
   imgBack.src = "cards/back.svg";
   cardBack.appendChild(imgBack);
 
+  // we sum 1 on the array position; when this number is 2 means we can't have this card anymore
   control[raffle] += 1;
 }
 
 function showAllCards() {
   let div = document.querySelectorAll(".spin");
   for (let i = 0; i < div.length; i++) {
+    // the class spin-click will flip the cards
     div[i].classList.add("spin-click");
   }
 }
@@ -97,6 +107,7 @@ function flipAllCards() {
   let div = document.querySelectorAll(".spin-click");
 
   for (let i = 0; i < div.length; i++) {
+    // when we remove the class spin-click, the card turn back to the original position
     div[i].classList.remove("spin-click");
   }
   getCardPosition();
@@ -129,6 +140,7 @@ function setCardsOnPlace() {
 }
 
 function onCardClick() {
+  // the class spin-click will flip the cards
   this.classList.add("spin-click");
 
   if (pair.length === 0) {
@@ -166,6 +178,7 @@ function crossHeart() {
 function flipCards() {
   for (let i = 0; i < pair.length; i++) {
     let div = pair[i].childNodes[0];
+    // when we remove the class spin-click, the card turn back to the original position
     div.classList.remove("spin-click");
   }
   pair = [];
